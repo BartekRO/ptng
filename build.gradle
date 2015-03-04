@@ -1,0 +1,32 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+
+test {
+    // enable TestNG support (default is JUnit)
+    useTestNG {
+        useDefaultListeners = false
+    }
+
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.testng:testng:6.4'
+    testCompile 'org.mockito:mockito-all:1.9.5'
+    testCompile 'com.googlecode.catch-exception:catch-exception:1.2.0'
+    testCompile 'org.easytesting:fest-assert:1.4'
+
+    testCompile 'commons-io:commons-io:2.4'
+
+
+}
